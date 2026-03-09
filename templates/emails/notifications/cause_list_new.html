@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Cause List - Cynosure</title>
+</head>
+<body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px;">
+    <div style="background: #1a365d; padding: 20px; text-align: center; border-radius: 8px 8px 0 0;">
+        <h1 style="color: #fff; margin: 0;">Cynosure</h1>
+        <p style="color: #a0aec0; margin: 5px 0 0;">Legal Information Platform</p>
+    </div>
+    
+    <div style="background: #fff; padding: 30px; border: 1px solid #e2e8f0; border-top: none;">
+        <h2 style="color: #1a365d; margin-top: 0;">📋 New Cause List Published</h2>
+        
+        <p>Hello {{ user.first_name }},</p>
+        
+        <p>A new cause list has been published for a court/judge you're following:</p>
+        
+        <div style="background: #f0fff4; border-left: 4px solid #38a169; padding: 15px; margin: 20px 0;">
+            <p style="margin: 0 0 10px;"><strong>Court:</strong> {{ court_name }}</p>
+            {% if judge_name %}
+            <p style="margin: 0 0 10px;"><strong>Judge:</strong> {{ judge_name }}</p>
+            {% endif %}
+            <p style="margin: 0 0 10px;"><strong>Date:</strong> {{ cause_list_date }}</p>
+            <p style="margin: 0;"><strong>Cases Listed:</strong> {{ total_cases }}</p>
+        </div>
+        
+        <div style="text-align: center; margin: 30px 0;">
+            <a href="{{ action_url }}" style="background: #1a365d; color: #fff; padding: 12px 30px; text-decoration: none; border-radius: 6px; display: inline-block;">View Cause List</a>
+        </div>
+        
+        <hr style="border: none; border-top: 1px solid #e2e8f0; margin: 30px 0;">
+        
+        <p style="color: #718096; font-size: 14px;">
+            Best regards,<br>
+            The Cynosure Team
+        </p>
+    </div>
+    
+    <div style="background: #f7fafc; padding: 15px; text-align: center; border-radius: 0 0 8px 8px; border: 1px solid #e2e8f0; border-top: none;">
+        <p style="color: #a0aec0; font-size: 12px; margin: 0;">
+            You're receiving this because you follow {{ court_name }}.<br>
+            <a href="{{ unsubscribe_url }}" style="color: #718096;">Manage notification preferences</a>
+        </p>
+    </div>
+</body>
+</html>

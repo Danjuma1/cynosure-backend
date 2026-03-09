@@ -1,0 +1,71 @@
+# Django Core
+Django>=4.2,<5.0
+djangorestframework>=3.14
+django-cors-headers>=4.2
+django-filter>=23.2
+
+# Authentication
+djangorestframework-simplejwt>=5.3
+PyJWT>=2.8
+
+# Database
+psycopg2-binary>=2.9
+django-redis>=5.3
+
+# Async / Channels
+channels>=4.0
+channels-redis>=4.1
+daphne>=4.0
+
+# Celery
+celery>=5.3
+django-celery-beat>=2.5
+django-celery-results>=2.5
+redis>=4.6
+
+# Storage
+boto3>=1.28
+django-storages>=1.13
+
+# API Documentation
+drf-spectacular>=0.26
+
+# PDF Processing
+pdfplumber>=0.10
+PyPDF2>=3.0
+
+# HTML Parsing
+beautifulsoup4>=4.12
+lxml>=4.9
+
+# HTTP Client
+requests>=2.31
+httpx>=0.24
+
+# Web Push
+pywebpush>=1.14
+
+# Security
+cryptography>=41.0
+python-dotenv>=1.0
+
+# Utilities
+Pillow>=10.0
+python-dateutil>=2.8
+pytz>=2023.3
+
+# Production Server
+gunicorn>=21.2
+uvicorn>=0.23
+
+# Monitoring (optional)
+sentry-sdk>=1.29
+
+# Testing
+pytest>=7.4
+pytest-django>=4.5
+pytest-cov>=4.1
+factory-boy>=3.3
+
+# Development
+ipython>=8.14

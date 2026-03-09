@@ -1,0 +1,1165 @@
+[
+  {
+    "model": "authentication.user",
+    "pk": "11111111-1111-1111-1111-111111111111",
+    "fields": {
+      "email": "admin@cynosure.ng",
+      "password": "admin123456",
+      "first_name": "System",
+      "last_name": "Administrator",
+      "user_type": "super_admin",
+      "is_staff": true,
+      "is_superuser": true,
+      "is_active": true,
+      "is_verified": true,
+      "phone_number": "+2348012345678",
+      "bar_number": "",
+      "specializations": [],
+      "bio": "System administrator for Cynosure platform"
+    }
+  },
+  {
+    "model": "authentication.user",
+    "pk": "22222222-2222-2222-2222-222222222222",
+    "fields": {
+      "email": "adaeze.okonkwo@lawfirm.ng",
+      "password": "lawyer123456",
+      "first_name": "Adaeze",
+      "last_name": "Okonkwo",
+      "title": "Esq.",
+      "user_type": "lawyer",
+      "is_staff": false,
+      "is_active": true,
+      "is_verified": true,
+      "phone_number": "+2348023456789",
+      "bar_number": "NBA/LAG/2015/12345",
+      "year_of_call": 2015,
+      "specializations": [
+        "Commercial Law",
+        "Corporate Law",
+        "Intellectual Property"
+      ],
+      "bio": "Senior Associate specializing in commercial and corporate law with over 8 years experience."
+    }
+  },
+  {
+    "model": "authentication.user",
+    "pk": "33333333-3333-3333-3333-333333333333",
+    "fields": {
+      "email": "ibrahim.mohammed@chambers.ng",
+      "password": "lawyer123456",
+      "first_name": "Ibrahim",
+      "last_name": "Mohammed",
+      "title": "SAN",
+      "user_type": "lawyer",
+      "is_staff": false,
+      "is_active": true,
+      "is_verified": true,
+      "phone_number": "+2348034567890",
+      "bar_number": "NBA/ABJ/2005/54321",
+      "year_of_call": 2005,
+      "specializations": [
+        "Constitutional Law",
+        "Human Rights",
+        "Election Petition"
+      ],
+      "bio": "Senior Advocate of Nigeria with expertise in constitutional matters."
+    }
+  },
+  {
+    "model": "authentication.user",
+    "pk": "44444444-4444-4444-4444-444444444444",
+    "fields": {
+      "email": "chidinma.eze@partners.ng",
+      "password": "lawyer123456",
+      "first_name": "Chidinma",
+      "last_name": "Eze",
+      "user_type": "lawyer",
+      "is_staff": false,
+      "is_active": true,
+      "is_verified": true,
+      "phone_number": "+2348045678901",
+      "bar_number": "NBA/PH/2018/67890",
+      "year_of_call": 2018,
+      "specializations": [
+        "Family Law",
+        "Criminal Law"
+      ],
+      "bio": "Legal consultant specializing in family and criminal matters."
+    }
+  },
+  {
+    "model": "authentication.user",
+    "pk": "55555555-5555-5555-5555-555555555555",
+    "fields": {
+      "email": "registry@fhc-lagos.gov.ng",
+      "password": "registry123456",
+      "first_name": "John",
+      "last_name": "Okoro",
+      "user_type": "registry_staff",
+      "is_staff": true,
+      "is_active": true,
+      "is_verified": true,
+      "phone_number": "+2348056789012",
+      "bio": "Registry staff at Federal High Court Lagos"
+    }
+  },
+  {
+    "model": "courts.court",
+    "pk": "aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa",
+    "fields": {
+      "name": "Supreme Court of Nigeria",
+      "code": "SC-ABJ",
+      "court_type": "SC",
+      "state": "FC",
+      "address": "Three Arms Zone, Central District",
+      "city": "Abuja",
+      "postal_code": "900001",
+      "latitude": "9.0579",
+      "longitude": "7.4951",
+      "phone_number": "+234-9-234-5678",
+      "email": "info@supremecourt.gov.ng",
+      "website": "https://supremecourt.gov.ng",
+      "jurisdiction": "Final appellate court with jurisdiction over all matters in Nigeria",
+      "working_days": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "working_hours": {
+        "start": "09:00",
+        "end": "16:00"
+      },
+      "is_active": true
+    }
+  },
+  {
+    "model": "courts.court",
+    "pk": "bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb",
+    "fields": {
+      "name": "Court of Appeal Lagos Division",
+      "code": "CA-LAG",
+      "court_type": "CA",
+      "state": "LA",
+      "address": "Court of Appeal Complex, Igbosere Road",
+      "city": "Lagos Island",
+      "postal_code": "101001",
+      "latitude": "6.4541",
+      "longitude": "3.4080",
+      "phone_number": "+234-1-234-5678",
+      "email": "lagos@courtofappeal.gov.ng",
+      "jurisdiction": "Appellate jurisdiction over all Federal and State High Courts in Lagos",
+      "working_days": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "working_hours": {
+        "start": "09:00",
+        "end": "16:00"
+      },
+      "is_active": true
+    }
+  },
+  {
+    "model": "courts.court",
+    "pk": "cccccccc-cccc-cccc-cccc-cccccccccccc",
+    "fields": {
+      "name": "Federal High Court Lagos",
+      "code": "FHC-LAG",
+      "court_type": "FHC",
+      "state": "LA",
+      "address": "Federal High Court Complex, Ikoyi",
+      "city": "Ikoyi",
+      "postal_code": "101233",
+      "latitude": "6.4474",
+      "longitude": "3.4354",
+      "phone_number": "+234-1-345-6789",
+      "email": "lagos@fhc.gov.ng",
+      "website": "https://fhc.gov.ng",
+      "jurisdiction": "Federal matters including revenue, admiralty, banking, intellectual property",
+      "working_days": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "working_hours": {
+        "start": "09:00",
+        "end": "16:00"
+      },
+      "is_active": true
+    }
+  },
+  {
+    "model": "courts.court",
+    "pk": "dddddddd-dddd-dddd-dddd-dddddddddddd",
+    "fields": {
+      "name": "Federal High Court Abuja",
+      "code": "FHC-ABJ",
+      "court_type": "FHC",
+      "state": "FC",
+      "address": "Federal High Court Complex, Central Area",
+      "city": "Abuja",
+      "postal_code": "900211",
+      "latitude": "9.0579",
+      "longitude": "7.4951",
+      "phone_number": "+234-9-456-7890",
+      "email": "abuja@fhc.gov.ng",
+      "jurisdiction": "Federal matters in FCT and nationwide",
+      "working_days": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "working_hours": {
+        "start": "09:00",
+        "end": "16:00"
+      },
+      "is_active": true
+    }
+  },
+  {
+    "model": "courts.court",
+    "pk": "eeeeeeee-eeee-eeee-eeee-eeeeeeeeeeee",
+    "fields": {
+      "name": "Lagos State High Court Ikeja",
+      "code": "SHC-LAG-IKJ",
+      "court_type": "SHC",
+      "state": "LA",
+      "address": "High Court Complex, Oba Akinjobi Way",
+      "city": "Ikeja",
+      "postal_code": "100271",
+      "latitude": "6.6018",
+      "longitude": "3.3515",
+      "phone_number": "+234-1-567-8901",
+      "email": "ikeja@lagosjudiciary.gov.ng",
+      "jurisdiction": "All civil and criminal matters within Lagos State",
+      "working_days": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "working_hours": {
+        "start": "09:00",
+        "end": "16:00"
+      },
+      "is_active": true
+    }
+  },
+  {
+    "model": "courts.court",
+    "pk": "ffffffff-ffff-ffff-ffff-ffffffffffff",
+    "fields": {
+      "name": "National Industrial Court Lagos",
+      "code": "NIC-LAG",
+      "court_type": "NIC",
+      "state": "LA",
+      "address": "NIC Complex, Victoria Island",
+      "city": "Victoria Island",
+      "postal_code": "101241",
+      "latitude": "6.4281",
+      "longitude": "3.4219",
+      "phone_number": "+234-1-678-9012",
+      "email": "lagos@nic.gov.ng",
+      "jurisdiction": "Labour and employment matters",
+      "working_days": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "working_hours": {
+        "start": "09:00",
+        "end": "16:00"
+      },
+      "is_active": true
+    }
+  },
+  {
+    "model": "courts.division",
+    "pk": "d1111111-1111-1111-1111-111111111111",
+    "fields": {
+      "court_id": "cccccccc-cccc-cccc-cccc-cccccccccccc",
+      "name": "Civil Division",
+      "code": "FHC-LAG-CIV",
+      "description": "Handles all civil matters",
+      "building": "Main Building",
+      "floor": "2nd Floor",
+      "is_active": true
+    }
+  },
+  {
+    "model": "courts.division",
+    "pk": "d2222222-2222-2222-2222-222222222222",
+    "fields": {
+      "court_id": "cccccccc-cccc-cccc-cccc-cccccccccccc",
+      "name": "Criminal Division",
+      "code": "FHC-LAG-CRM",
+      "description": "Handles all criminal matters",
+      "building": "Main Building",
+      "floor": "3rd Floor",
+      "is_active": true
+    }
+  },
+  {
+    "model": "courts.division",
+    "pk": "d3333333-3333-3333-3333-333333333333",
+    "fields": {
+      "court_id": "eeeeeeee-eeee-eeee-eeee-eeeeeeeeeeee",
+      "name": "Family Division",
+      "code": "SHC-LAG-FAM",
+      "description": "Handles family law matters including divorce, custody, and adoption",
+      "building": "Annex Building",
+      "floor": "1st Floor",
+      "is_active": true
+    }
+  },
+  {
+    "model": "courts.courtroom",
+    "pk": "cr111111-1111-1111-1111-111111111111",
+    "fields": {
+      "court_id": "cccccccc-cccc-cccc-cccc-cccccccccccc",
+      "division_id": "d1111111-1111-1111-1111-111111111111",
+      "name": "Court 1",
+      "number": "1",
+      "building": "Main Building",
+      "floor": "2nd Floor",
+      "capacity": 100,
+      "has_video_conferencing": true,
+      "has_recording": true,
+      "is_accessible": true,
+      "is_active": true
+    }
+  },
+  {
+    "model": "courts.courtroom",
+    "pk": "cr222222-2222-2222-2222-222222222222",
+    "fields": {
+      "court_id": "cccccccc-cccc-cccc-cccc-cccccccccccc",
+      "division_id": "d1111111-1111-1111-1111-111111111111",
+      "name": "Court 2",
+      "number": "2",
+      "building": "Main Building",
+      "floor": "2nd Floor",
+      "capacity": 80,
+      "has_video_conferencing": true,
+      "has_recording": false,
+      "is_accessible": true,
+      "is_active": true
+    }
+  },
+  {
+    "model": "courts.courtroom",
+    "pk": "cr333333-3333-3333-3333-333333333333",
+    "fields": {
+      "court_id": "eeeeeeee-eeee-eeee-eeee-eeeeeeeeeeee",
+      "name": "Court A",
+      "number": "A",
+      "building": "High Court Complex",
+      "floor": "Ground Floor",
+      "capacity": 120,
+      "has_video_conferencing": true,
+      "has_recording": true,
+      "is_accessible": true,
+      "is_active": true
+    }
+  },
+  {
+    "model": "judges.judge",
+    "pk": "j1111111-1111-1111-1111-111111111111",
+    "fields": {
+      "title": "HON_JUSTICE",
+      "first_name": "Oluwakemi",
+      "last_name": "Oguntoyinbo",
+      "other_names": "Abimbola",
+      "court_id": "cccccccc-cccc-cccc-cccc-cccccccccccc",
+      "division_id": "d1111111-1111-1111-1111-111111111111",
+      "status": "active",
+      "email": "j.oguntoyinbo@fhc.gov.ng",
+      "office_location": "Court 1, 2nd Floor",
+      "biography": "Called to the Bar in 1990. Elevated to the Federal High Court bench in 2010. Specializes in commercial and admiralty matters.",
+      "appointment_date": "2010-05-15",
+      "year_of_call": 1990,
+      "qualifications": [
+        "LL.B (Hons) UNILAG",
+        "BL",
+        "LL.M Harvard"
+      ],
+      "areas_of_expertise": [
+        "Commercial Law",
+        "Admiralty",
+        "Banking"
+      ],
+      "sitting_days": [
+        0,
+        2,
+        4
+      ],
+      "sitting_time_start": "09:00",
+      "sitting_time_end": "16:00",
+      "is_chief_judge": false,
+      "is_active": true
+    }
+  },
+  {
+    "model": "judges.judge",
+    "pk": "j2222222-2222-2222-2222-222222222222",
+    "fields": {
+      "title": "HON_JUSTICE",
+      "first_name": "Ahmed",
+      "last_name": "Mohammed",
+      "other_names": "Bello",
+      "court_id": "cccccccc-cccc-cccc-cccc-cccccccccccc",
+      "division_id": "d2222222-2222-2222-2222-222222222222",
+      "status": "active",
+      "email": "j.mohammed@fhc.gov.ng",
+      "office_location": "Court 2, 3rd Floor",
+      "biography": "Distinguished jurist with extensive experience in criminal law and constitutional matters.",
+      "appointment_date": "2012-08-20",
+      "year_of_call": 1988,
+      "qualifications": [
+        "LL.B (Hons) ABU",
+        "BL",
+        "LL.M Cambridge",
+        "Ph.D"
+      ],
+      "areas_of_expertise": [
+        "Criminal Law",
+        "Constitutional Law",
+        "Human Rights"
+      ],
+      "sitting_days": [
+        1,
+        3
+      ],
+      "sitting_time_start": "09:00",
+      "sitting_time_end": "16:00",
+      "is_chief_judge": false,
+      "is_active": true
+    }
+  },
+  {
+    "model": "judges.judge",
+    "pk": "j3333333-3333-3333-3333-333333333333",
+    "fields": {
+      "title": "HON_JUSTICE",
+      "first_name": "Ngozi",
+      "last_name": "Emeka",
+      "court_id": "eeeeeeee-eeee-eeee-eeee-eeeeeeeeeeee",
+      "division_id": "d3333333-3333-3333-3333-333333333333",
+      "status": "active",
+      "email": "j.emeka@lagosjudiciary.gov.ng",
+      "office_location": "Court A, Annex Building",
+      "biography": "Expert in family law matters with compassionate approach to justice.",
+      "appointment_date": "2015-03-10",
+      "year_of_call": 1995,
+      "qualifications": [
+        "LL.B (Hons) UNN",
+        "BL",
+        "LL.M London"
+      ],
+      "areas_of_expertise": [
+        "Family Law",
+        "Child Rights",
+        "Probate"
+      ],
+      "sitting_days": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "sitting_time_start": "09:00",
+      "sitting_time_end": "15:00",
+      "is_chief_judge": false,
+      "is_active": true
+    }
+  },
+  {
+    "model": "judges.judge",
+    "pk": "j4444444-4444-4444-4444-444444444444",
+    "fields": {
+      "title": "JUSTICE",
+      "first_name": "Olukayode",
+      "last_name": "Ariwoola",
+      "court_id": "aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa",
+      "status": "active",
+      "email": "cjn@supremecourt.gov.ng",
+      "biography": "Chief Justice of Nigeria. Appointed to the Supreme Court in 2011.",
+      "appointment_date": "2011-11-22",
+      "year_of_call": 1980,
+      "qualifications": [
+        "LL.B (Hons) OAU",
+        "BL"
+      ],
+      "areas_of_expertise": [
+        "Constitutional Law",
+        "Appellate Practice"
+      ],
+      "is_chief_judge": true,
+      "is_active": true
+    }
+  },
+  {
+    "model": "judges.judge",
+    "pk": "j5555555-5555-5555-5555-555555555555",
+    "fields": {
+      "title": "HON_JUSTICE",
+      "first_name": "Fatima",
+      "last_name": "Abubakar",
+      "court_id": "dddddddd-dddd-dddd-dddd-dddddddddddd",
+      "status": "active",
+      "email": "j.abubakar@fhc.gov.ng",
+      "office_location": "Court 5, Main Building",
+      "biography": "Highly respected jurist known for intellectual property and technology law expertise.",
+      "appointment_date": "2018-01-15",
+      "year_of_call": 2000,
+      "qualifications": [
+        "LL.B (Hons) BUK",
+        "BL",
+        "LL.M Stanford",
+        "SJD"
+      ],
+      "areas_of_expertise": [
+        "Intellectual Property",
+        "Technology Law",
+        "Commercial Law"
+      ],
+      "sitting_days": [
+        0,
+        1,
+        3,
+        4
+      ],
+      "sitting_time_start": "09:00",
+      "sitting_time_end": "16:00",
+      "is_chief_judge": false,
+      "is_active": true
+    }
+  },
+  {
+    "model": "cases.case",
+    "pk": "c1111111-1111-1111-1111-111111111111",
+    "fields": {
+      "case_number": "FHC/L/CS/123/2024",
+      "suit_number": "SUIT NO: FHC/L/CS/123/2024",
+      "court_id": "cccccccc-cccc-cccc-cccc-cccccccccccc",
+      "division_id": "d1111111-1111-1111-1111-111111111111",
+      "judge_id": "j1111111-1111-1111-1111-111111111111",
+      "parties": "ACME Corporation Ltd v. Global Enterprises Inc & Anor",
+      "applicant": "ACME Corporation Ltd",
+      "respondent": "Global Enterprises Inc",
+      "co_respondents": [
+        "First Bank Plc"
+      ],
+      "case_type": "commercial",
+      "matter_type": "Breach of Contract",
+      "subject_matter": "Recovery of N500,000,000 being damages for breach of supply agreement",
+      "status": "active",
+      "filing_date": "2024-01-15",
+      "first_hearing_date": "2024-02-20",
+      "last_hearing_date": "2024-11-15",
+      "next_hearing_date": "2025-01-20",
+      "counsel_for_applicant": "Chief Wole Olanipekun, SAN with Mrs. A. Okonkwo",
+      "counsel_for_respondent": "Femi Falana, SAN with Mr. B. Adeyemi",
+      "total_adjournments": 5,
+      "total_hearings": 8,
+      "source": "manual"
+    }
+  },
+  {
+    "model": "cases.case",
+    "pk": "c2222222-2222-2222-2222-222222222222",
+    "fields": {
+      "case_number": "FHC/L/CS/456/2024",
+      "court_id": "cccccccc-cccc-cccc-cccc-cccccccccccc",
+      "division_id": "d1111111-1111-1111-1111-111111111111",
+      "judge_id": "j1111111-1111-1111-1111-111111111111",
+      "parties": "Nigerian Maritime Administration & Safety Agency v. Ocean Carriers Ltd",
+      "applicant": "Nigerian Maritime Administration & Safety Agency",
+      "respondent": "Ocean Carriers Ltd",
+      "case_type": "admiralty",
+      "matter_type": "Maritime Enforcement",
+      "subject_matter": "Breach of maritime regulations and safety standards",
+      "status": "reserved",
+      "filing_date": "2024-03-10",
+      "first_hearing_date": "2024-04-15",
+      "last_hearing_date": "2024-12-01",
+      "judgment_date": "2025-01-30",
+      "counsel_for_applicant": "Dr. J.O. Oyewo with Ms. K. Nnamdi",
+      "counsel_for_respondent": "Mr. C.A. Akpamgbo, SAN",
+      "total_adjournments": 3,
+      "total_hearings": 12,
+      "source": "manual"
+    }
+  },
+  {
+    "model": "cases.case",
+    "pk": "c3333333-3333-3333-3333-333333333333",
+    "fields": {
+      "case_number": "FHC/ABJ/CR/100/2024",
+      "court_id": "dddddddd-dddd-dddd-dddd-dddddddddddd",
+      "judge_id": "j5555555-5555-5555-5555-555555555555",
+      "parties": "Federal Republic of Nigeria v. John Doe",
+      "applicant": "Federal Republic of Nigeria",
+      "respondent": "John Doe",
+      "case_type": "criminal",
+      "matter_type": "Advance Fee Fraud",
+      "subject_matter": "10-count charge of obtaining by false pretenses contrary to Section 419 of Criminal Code",
+      "status": "active",
+      "filing_date": "2024-05-20",
+      "first_hearing_date": "2024-06-15",
+      "last_hearing_date": "2024-12-10",
+      "next_hearing_date": "2025-01-15",
+      "counsel_for_applicant": "Mr. Shuaib Labaran (EFCC Counsel)",
+      "counsel_for_respondent": "Chief Mike Ozekhome, SAN",
+      "total_adjournments": 4,
+      "total_hearings": 10,
+      "source": "manual"
+    }
+  },
+  {
+    "model": "cases.case",
+    "pk": "c4444444-4444-4444-4444-444444444444",
+    "fields": {
+      "case_number": "LD/FAM/123/2024",
+      "court_id": "eeeeeeee-eeee-eeee-eeee-eeeeeeeeeeee",
+      "division_id": "d3333333-3333-3333-3333-333333333333",
+      "judge_id": "j3333333-3333-3333-3333-333333333333",
+      "parties": "Mrs. Ada Obi v. Mr. Chukwudi Obi",
+      "applicant": "Mrs. Ada Obi",
+      "respondent": "Mr. Chukwudi Obi",
+      "case_type": "family",
+      "matter_type": "Divorce and Custody",
+      "subject_matter": "Petition for dissolution of marriage and custody of minor children",
+      "status": "active",
+      "filing_date": "2024-06-01",
+      "first_hearing_date": "2024-07-10",
+      "last_hearing_date": "2024-11-20",
+      "next_hearing_date": "2025-01-25",
+      "counsel_for_applicant": "Mrs. C. Eze",
+      "counsel_for_respondent": "Mr. O. Okafor",
+      "total_adjournments": 2,
+      "total_hearings": 6,
+      "source": "manual"
+    }
+  },
+  {
+    "model": "cases.case",
+    "pk": "c5555555-5555-5555-5555-555555555555",
+    "fields": {
+      "case_number": "FHC/L/CS/789/2024",
+      "court_id": "cccccccc-cccc-cccc-cccc-cccccccccccc",
+      "judge_id": "j1111111-1111-1111-1111-111111111111",
+      "parties": "TechStart Nigeria Ltd v. Innovate Corp & Ors",
+      "applicant": "TechStart Nigeria Ltd",
+      "respondent": "Innovate Corp",
+      "co_respondents": [
+        "Patent Office Nigeria",
+        "Ministry of Science and Technology"
+      ],
+      "case_type": "commercial",
+      "matter_type": "Intellectual Property",
+      "subject_matter": "Patent infringement and unfair competition",
+      "status": "pending",
+      "filing_date": "2024-09-15",
+      "next_hearing_date": "2025-01-28",
+      "counsel_for_applicant": "Mr. I. Mohammed, SAN",
+      "counsel_for_respondent": "Mrs. F. Adesanya",
+      "total_adjournments": 0,
+      "total_hearings": 1,
+      "source": "manual"
+    }
+  },
+  {
+    "model": "cause_lists.causelist",
+    "pk": "cl111111-1111-1111-1111-111111111111",
+    "fields": {
+      "court_id": "cccccccc-cccc-cccc-cccc-cccccccccccc",
+      "judge_id": "j1111111-1111-1111-1111-111111111111",
+      "courtroom_id": "cr111111-1111-1111-1111-111111111111",
+      "date": "2025-01-20",
+      "status": "published",
+      "start_time": "09:00",
+      "end_time": "16:00",
+      "total_cases": 8,
+      "source": "manual",
+      "version": 1
+    }
+  },
+  {
+    "model": "cause_lists.causelist",
+    "pk": "cl222222-2222-2222-2222-222222222222",
+    "fields": {
+      "court_id": "cccccccc-cccc-cccc-cccc-cccccccccccc",
+      "judge_id": "j2222222-2222-2222-2222-222222222222",
+      "courtroom_id": "cr222222-2222-2222-2222-222222222222",
+      "date": "2025-01-21",
+      "status": "published",
+      "start_time": "09:00",
+      "end_time": "16:00",
+      "total_cases": 6,
+      "source": "manual",
+      "version": 1
+    }
+  },
+  {
+    "model": "cause_lists.causelist",
+    "pk": "cl333333-3333-3333-3333-333333333333",
+    "fields": {
+      "court_id": "eeeeeeee-eeee-eeee-eeee-eeeeeeeeeeee",
+      "judge_id": "j3333333-3333-3333-3333-333333333333",
+      "courtroom_id": "cr333333-3333-3333-3333-333333333333",
+      "date": "2025-01-25",
+      "status": "published",
+      "start_time": "09:00",
+      "end_time": "15:00",
+      "total_cases": 10,
+      "source": "manual",
+      "version": 1
+    }
+  },
+  {
+    "model": "cause_lists.causelistentry",
+    "pk": "cle11111-1111-1111-1111-111111111111",
+    "fields": {
+      "cause_list_id": "cl111111-1111-1111-1111-111111111111",
+      "case_id": "c1111111-1111-1111-1111-111111111111",
+      "case_number": "FHC/L/CS/123/2024",
+      "parties": "ACME Corporation Ltd v. Global Enterprises Inc & Anor",
+      "applicant": "ACME Corporation Ltd",
+      "respondent": "Global Enterprises Inc",
+      "matter_type": "Breach of Contract",
+      "case_type": "civil",
+      "order_number": 1,
+      "scheduled_time": "09:00",
+      "status": "scheduled",
+      "counsel_for_applicant": "Chief Wole Olanipekun, SAN",
+      "counsel_for_respondent": "Femi Falana, SAN"
+    }
+  },
+  {
+    "model": "cause_lists.causelistentry",
+    "pk": "cle22222-2222-2222-2222-222222222222",
+    "fields": {
+      "cause_list_id": "cl111111-1111-1111-1111-111111111111",
+      "case_id": "c2222222-2222-2222-2222-222222222222",
+      "case_number": "FHC/L/CS/456/2024",
+      "parties": "NIMASA v. Ocean Carriers Ltd",
+      "applicant": "NIMASA",
+      "respondent": "Ocean Carriers Ltd",
+      "matter_type": "Maritime Enforcement",
+      "case_type": "civil",
+      "order_number": 2,
+      "scheduled_time": "10:30",
+      "status": "scheduled",
+      "notes": "For Judgment"
+    }
+  },
+  {
+    "model": "cause_lists.causelistentry",
+    "pk": "cle33333-3333-3333-3333-333333333333",
+    "fields": {
+      "cause_list_id": "cl111111-1111-1111-1111-111111111111",
+      "case_id": "c5555555-5555-5555-5555-555555555555",
+      "case_number": "FHC/L/CS/789/2024",
+      "parties": "TechStart Nigeria Ltd v. Innovate Corp & Ors",
+      "applicant": "TechStart Nigeria Ltd",
+      "respondent": "Innovate Corp",
+      "matter_type": "Intellectual Property",
+      "case_type": "civil",
+      "order_number": 3,
+      "scheduled_time": "12:00",
+      "status": "scheduled",
+      "notes": "For Mention"
+    }
+  },
+  {
+    "model": "cause_lists.causelistentry",
+    "pk": "cle44444-4444-4444-4444-444444444444",
+    "fields": {
+      "cause_list_id": "cl333333-3333-3333-3333-333333333333",
+      "case_id": "c4444444-4444-4444-4444-444444444444",
+      "case_number": "LD/FAM/123/2024",
+      "parties": "Mrs. Ada Obi v. Mr. Chukwudi Obi",
+      "applicant": "Mrs. Ada Obi",
+      "respondent": "Mr. Chukwudi Obi",
+      "matter_type": "Divorce and Custody",
+      "case_type": "hearing",
+      "order_number": 1,
+      "scheduled_time": "09:00",
+      "status": "scheduled"
+    }
+  },
+  {
+    "model": "notifications.notification",
+    "pk": "n1111111-1111-1111-1111-111111111111",
+    "fields": {
+      "user_id": "22222222-2222-2222-2222-222222222222",
+      "notification_type": "cause_list_new",
+      "title": "New Cause List Published",
+      "message": "The cause list for Federal High Court Lagos (Hon. Justice Oguntoyinbo) for January 20, 2025 has been published.",
+      "priority": "normal",
+      "court_id": "cccccccc-cccc-cccc-cccc-cccccccccccc",
+      "judge_id": "j1111111-1111-1111-1111-111111111111",
+      "cause_list_id": "cl111111-1111-1111-1111-111111111111",
+      "action_url": "/cause-lists/cl111111-1111-1111-1111-111111111111",
+      "is_read": false
+    }
+  },
+  {
+    "model": "notifications.notification",
+    "pk": "n2222222-2222-2222-2222-222222222222",
+    "fields": {
+      "user_id": "22222222-2222-2222-2222-222222222222",
+      "notification_type": "case_on_docket",
+      "title": "Your Case is on Tomorrow's List",
+      "message": "Case FHC/L/CS/123/2024 (ACME Corporation Ltd v. Global Enterprises Inc) is scheduled for hearing tomorrow at 09:00.",
+      "priority": "high",
+      "case_id": "c1111111-1111-1111-1111-111111111111",
+      "action_url": "/cases/c1111111-1111-1111-1111-111111111111",
+      "is_read": false
+    }
+  },
+  {
+    "model": "notifications.notification",
+    "pk": "n3333333-3333-3333-3333-333333333333",
+    "fields": {
+      "user_id": "44444444-4444-4444-4444-444444444444",
+      "notification_type": "case_adjournment",
+      "title": "Case Adjourned",
+      "message": "Case LD/FAM/123/2024 has been adjourned from January 10 to January 25, 2025. Reason: Counsel for Respondent's illness.",
+      "priority": "normal",
+      "case_id": "c4444444-4444-4444-4444-444444444444",
+      "action_url": "/cases/c4444444-4444-4444-4444-444444444444",
+      "is_read": true
+    }
+  },
+  {
+    "model": "repository.documentcategory",
+    "pk": "dc111111-1111-1111-1111-111111111111",
+    "fields": {
+      "name": "Court Rules",
+      "slug": "court-rules",
+      "description": "Official rules of court procedure",
+      "order": 1
+    }
+  },
+  {
+    "model": "repository.documentcategory",
+    "pk": "dc222222-2222-2222-2222-222222222222",
+    "fields": {
+      "name": "Practice Directions",
+      "slug": "practice-directions",
+      "description": "Practice directions issued by courts",
+      "order": 2
+    }
+  },
+  {
+    "model": "repository.documentcategory",
+    "pk": "dc333333-3333-3333-3333-333333333333",
+    "fields": {
+      "name": "Court Forms",
+      "slug": "court-forms",
+      "description": "Standard court forms and templates",
+      "order": 3
+    }
+  },
+  {
+    "model": "repository.documentcategory",
+    "pk": "dc444444-4444-4444-4444-444444444444",
+    "fields": {
+      "name": "Statutes",
+      "slug": "statutes",
+      "description": "Acts of Parliament and Laws",
+      "order": 4
+    }
+  },
+  {
+    "model": "repository.documentcategory",
+    "pk": "dc555555-5555-5555-5555-555555555555",
+    "fields": {
+      "name": "Judgments",
+      "slug": "judgments",
+      "description": "Published court judgments",
+      "order": 5
+    }
+  },
+  {
+    "model": "repository.legaldocument",
+    "pk": "ld111111-1111-1111-1111-111111111111",
+    "fields": {
+      "title": "Federal High Court (Civil Procedure) Rules 2019",
+      "slug": "fhc-civil-procedure-rules-2019",
+      "description": "The principal rules governing civil procedure in the Federal High Court of Nigeria",
+      "document_type": "court_rule",
+      "category_id": "dc111111-1111-1111-1111-111111111111",
+      "court_id": "cccccccc-cccc-cccc-cccc-cccccccccccc",
+      "tags": [
+        "civil procedure",
+        "federal high court",
+        "rules"
+      ],
+      "effective_date": "2019-01-01",
+      "year": 2019,
+      "is_published": true,
+      "is_current": true,
+      "citation": "Federal High Court (Civil Procedure) Rules, 2019"
+    }
+  },
+  {
+    "model": "repository.legaldocument",
+    "pk": "ld222222-2222-2222-2222-222222222222",
+    "fields": {
+      "title": "Practice Direction on Electronic Filing 2023",
+      "slug": "e-filing-practice-direction-2023",
+      "description": "Guidelines for electronic filing of court documents",
+      "document_type": "practice_direction",
+      "category_id": "dc222222-2222-2222-2222-222222222222",
+      "court_id": "cccccccc-cccc-cccc-cccc-cccccccccccc",
+      "tags": [
+        "e-filing",
+        "electronic filing",
+        "practice direction"
+      ],
+      "effective_date": "2023-06-01",
+      "year": 2023,
+      "is_published": true,
+      "is_current": true
+    }
+  },
+  {
+    "model": "repository.legaldocument",
+    "pk": "ld333333-3333-3333-3333-333333333333",
+    "fields": {
+      "title": "Companies and Allied Matters Act 2020",
+      "slug": "cama-2020",
+      "description": "The principal legislation governing company formation and administration in Nigeria",
+      "document_type": "statute",
+      "category_id": "dc444444-4444-4444-4444-444444444444",
+      "tags": [
+        "CAMA",
+        "company law",
+        "corporate law"
+      ],
+      "effective_date": "2020-08-07",
+      "year": 2020,
+      "is_published": true,
+      "is_current": true,
+      "citation": "Companies and Allied Matters Act, 2020"
+    }
+  },
+  {
+    "model": "repository.legaldocument",
+    "pk": "ld444444-4444-4444-4444-444444444444",
+    "fields": {
+      "title": "Form 01 - Writ of Summons",
+      "slug": "form-01-writ-of-summons",
+      "description": "Standard form for commencement of civil action by writ of summons",
+      "document_type": "form",
+      "category_id": "dc333333-3333-3333-3333-333333333333",
+      "court_id": "cccccccc-cccc-cccc-cccc-cccccccccccc",
+      "tags": [
+        "writ",
+        "summons",
+        "form",
+        "civil action"
+      ],
+      "is_published": true,
+      "is_current": true
+    }
+  },
+  {
+    "model": "repository.legaldocument",
+    "pk": "ld555555-5555-5555-5555-555555555555",
+    "fields": {
+      "title": "Lagos State High Court Practice Direction on ADR 2022",
+      "slug": "lagos-hc-adr-practice-direction-2022",
+      "description": "Practice direction mandating pre-trial ADR in civil matters",
+      "document_type": "practice_direction",
+      "category_id": "dc222222-2222-2222-2222-222222222222",
+      "court_id": "eeeeeeee-eeee-eeee-eeee-eeeeeeeeeeee",
+      "tags": [
+        "ADR",
+        "mediation",
+        "Lagos",
+        "practice direction"
+      ],
+      "effective_date": "2022-03-01",
+      "year": 2022,
+      "is_published": true,
+      "is_current": true
+    }
+  },
+  {
+    "model": "courts.courtholiday",
+    "pk": "ch111111-1111-1111-1111-111111111111",
+    "fields": {
+      "court_id": "cccccccc-cccc-cccc-cccc-cccccccccccc",
+      "name": "Christmas Holiday",
+      "description": "Christmas and New Year Court Vacation",
+      "start_date": "2024-12-20",
+      "end_date": "2025-01-06",
+      "holiday_type": "vacation",
+      "is_recurring": true
+    }
+  },
+  {
+    "model": "courts.courtholiday",
+    "pk": "ch222222-2222-2222-2222-222222222222",
+    "fields": {
+      "court_id": "cccccccc-cccc-cccc-cccc-cccccccccccc",
+      "name": "Easter Holiday",
+      "description": "Easter Court Vacation",
+      "start_date": "2025-04-18",
+      "end_date": "2025-04-21",
+      "holiday_type": "vacation",
+      "is_recurring": true
+    }
+  },
+  {
+    "model": "courts.courtholiday",
+    "pk": "ch333333-3333-3333-3333-333333333333",
+    "fields": {
+      "court_id": "cccccccc-cccc-cccc-cccc-cccccccccccc",
+      "name": "Long Vacation",
+      "description": "Annual Court Long Vacation",
+      "start_date": "2025-07-21",
+      "end_date": "2025-09-14",
+      "holiday_type": "vacation",
+      "is_recurring": true
+    }
+  },
+  {
+    "model": "authentication.userfollowing",
+    "pk": "uf111111-1111-1111-1111-111111111111",
+    "fields": {
+      "user_id": "22222222-2222-2222-2222-222222222222",
+      "follow_type": "court",
+      "object_id": "cccccccc-cccc-cccc-cccc-cccccccccccc",
+      "notifications_enabled": true
+    }
+  },
+  {
+    "model": "authentication.userfollowing",
+    "pk": "uf222222-2222-2222-2222-222222222222",
+    "fields": {
+      "user_id": "22222222-2222-2222-2222-222222222222",
+      "follow_type": "judge",
+      "object_id": "j1111111-1111-1111-1111-111111111111",
+      "notifications_enabled": true
+    }
+  },
+  {
+    "model": "authentication.userfollowing",
+    "pk": "uf333333-3333-3333-3333-333333333333",
+    "fields": {
+      "user_id": "22222222-2222-2222-2222-222222222222",
+      "follow_type": "case",
+      "object_id": "c1111111-1111-1111-1111-111111111111",
+      "notifications_enabled": true
+    }
+  },
+  {
+    "model": "authentication.userfollowing",
+    "pk": "uf444444-4444-4444-4444-444444444444",
+    "fields": {
+      "user_id": "44444444-4444-4444-4444-444444444444",
+      "follow_type": "case",
+      "object_id": "c4444444-4444-4444-4444-444444444444",
+      "notifications_enabled": true
+    }
+  },
+  {
+    "model": "authentication.userfollowing",
+    "pk": "uf555555-5555-5555-5555-555555555555",
+    "fields": {
+      "user_id": "33333333-3333-3333-3333-333333333333",
+      "follow_type": "court",
+      "object_id": "dddddddd-dddd-dddd-dddd-dddddddddddd",
+      "notifications_enabled": true
+    }
+  },
+  {
+    "model": "notifications.notificationpreference",
+    "pk": "np111111-1111-1111-1111-111111111111",
+    "fields": {
+      "user_id": "22222222-2222-2222-2222-222222222222",
+      "email_enabled": true,
+      "push_enabled": true,
+      "sms_enabled": false,
+      "cause_list_new": true,
+      "cause_list_update": true,
+      "case_adjournment": true,
+      "not_sitting": true,
+      "case_on_docket": true,
+      "daily_digest": true,
+      "digest_time": "07:00"
+    }
+  },
+  {
+    "model": "notifications.notificationpreference",
+    "pk": "np222222-2222-2222-2222-222222222222",
+    "fields": {
+      "user_id": "44444444-4444-4444-4444-444444444444",
+      "email_enabled": true,
+      "push_enabled": false,
+      "sms_enabled": true,
+      "cause_list_new": true,
+      "cause_list_update": true,
+      "case_adjournment": true,
+      "not_sitting": true,
+      "case_on_docket": true,
+      "daily_digest": false
+    }
+  },
+  {
+    "model": "cases.casehearing",
+    "pk": "h1111111-1111-1111-1111-111111111111",
+    "fields": {
+      "case_id": "c1111111-1111-1111-1111-111111111111",
+      "date": "2024-11-15",
+      "time": "09:00",
+      "judge_id": "j1111111-1111-1111-1111-111111111111",
+      "courtroom": "Court 1",
+      "outcome": "adjourned",
+      "outcome_notes": "Adjourned for continuation of cross-examination",
+      "next_date": "2025-01-20",
+      "adjournment_reason": "Time constraints - witness cross-examination not completed",
+      "applicant_present": true,
+      "respondent_present": true,
+      "counsel_applicant_present": true,
+      "counsel_respondent_present": true
+    }
+  },
+  {
+    "model": "cases.casehearing",
+    "pk": "h2222222-2222-2222-2222-222222222222",
+    "fields": {
+      "case_id": "c2222222-2222-2222-2222-222222222222",
+      "date": "2024-12-01",
+      "time": "10:30",
+      "judge_id": "j1111111-1111-1111-1111-111111111111",
+      "courtroom": "Court 1",
+      "outcome": "hearing",
+      "outcome_notes": "Final addresses concluded. Judgment reserved.",
+      "proceedings": "Learned counsel for both parties adopted their written addresses. Court reserved judgment.",
+      "applicant_present": true,
+      "respondent_present": true,
+      "counsel_applicant_present": true,
+      "counsel_respondent_present": true
+    }
+  }
+]
