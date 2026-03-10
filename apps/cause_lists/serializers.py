@@ -2,7 +2,37 @@
 Serializers for cause lists endpoints.
 """
 from rest_framework import serializers
-from .models import CauseList, CauseListEntry, CauseListChange, CauseListSubscription
+from .models import CauseList, CauseListEntry, CauseListChange, CauseListSubscription, CauseListImage
+
+
+class CauseListImageSerializer(serializers.ModelSerializer):
+    """Serializer for cause list images (photos taken by staff)."""
+    thumbnail_url = serializers.SerializerMethodField()
+    image_url = serializers.SerializerMethodField()
+    uploaded_by_name = serializers.CharField(source='uploaded_by.full_name', read_only=True)
+
+    class Meta:
+        model = CauseListImage
+        fields = [
+            'id', 'page_number', 'caption',
+            'image_url', 'thumbnail_url',
+            'width', 'height', 'file_size',
+            'uploaded_by', 'uploaded_by_name',
+            'created_at',
+        ]
+        read_only_fields = ['id', 'width', 'height', 'file_size', 'created_at']
+
+    def get_image_url(self, obj):
+        request = self.context.get('request')
+        if obj.image and request:
+            return request.build_absolute_uri(obj.image.url)
+        return obj.image.url if obj.image else None
+
+    def get_thumbnail_url(self, obj):
+        request = self.context.get('request')
+        if obj.thumbnail and request:
+            return request.build_absolute_uri(obj.thumbnail.url)
+        return obj.thumbnail.url if obj.thumbnail else None
 
 
 class CauseListEntrySerializer(serializers.ModelSerializer):
@@ -50,7 +80,8 @@ class CauseListSerializer(serializers.ModelSerializer):
     panel_name = serializers.CharField(source='panel.name', read_only=True)
     courtroom_name = serializers.CharField(source='courtroom.name', read_only=True)
     entries = CauseListEntrySerializer(many=True, read_only=True)
-    
+    images = CauseListImageSerializer(many=True, read_only=True)
+
     class Meta:
         model = CauseList
         fields = [
@@ -62,10 +93,10 @@ class CauseListSerializer(serializers.ModelSerializer):
             'status_note', 'adjournment_reason', 'not_sitting_reason',
             'pdf_file', 'source',
             'published_at', 'total_cases', 'version',
-            'entries',
+            'entries', 'images',
             'created_at', 'updated_at',
         ]
-    
+
     def get_judge_name(self, obj):
         if obj.judge:
             return obj.judge.formal_name
@@ -77,7 +108,9 @@ class CauseListListSerializer(serializers.ModelSerializer):
     status_display = serializers.CharField(source='get_status_display', read_only=True)
     court_name = serializers.CharField(source='court.name', read_only=True)
     judge_name = serializers.SerializerMethodField()
-    
+    image_count = serializers.SerializerMethodField()
+    cover_thumbnail = serializers.SerializerMethodField()
+
     class Meta:
         model = CauseList
         fields = [
@@ -85,13 +118,25 @@ class CauseListListSerializer(serializers.ModelSerializer):
             'judge', 'judge_name', 'panel',
             'date', 'status', 'status_display',
             'start_time', 'total_cases',
-            'published_at',
+            'published_at', 'image_count', 'cover_thumbnail',
         ]
-    
+
     def get_judge_name(self, obj):
         if obj.judge:
             return obj.judge.formal_name
         return None
+
+    def get_image_count(self, obj):
+        return obj.images.filter(is_deleted=False).count()
+
+    def get_cover_thumbnail(self, obj):
+        first = obj.images.filter(is_deleted=False).order_by('page_number').first()
+        if not first or not first.thumbnail:
+            return None
+        request = self.context.get('request')
+        if request:
+            return request.build_absolute_uri(first.thumbnail.url)
+        return first.thumbnail.url
 
 
 class CauseListCreateSerializer(serializers.ModelSerializer):

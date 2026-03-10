@@ -312,6 +312,46 @@ class CauseListSubscription(TimeStampedModel):
         return f"{self.user.email} -> {target}"
 
 
+class CauseListImage(BaseModel):
+    """
+    Photo of a physical cause list snapped by Cynosure staff at the court.
+    Multiple images are supported (one per page of the cause list).
+    Images are compressed on upload and a thumbnail is auto-generated.
+    """
+    cause_list = models.ForeignKey(
+        CauseList,
+        on_delete=models.CASCADE,
+        related_name='images'
+    )
+    image = models.ImageField(upload_to='cause_lists/images/')
+    thumbnail = models.ImageField(upload_to='cause_lists/thumbnails/', blank=True)
+
+    page_number = models.PositiveSmallIntegerField(default=1, help_text="Page order (1-based)")
+    caption = models.CharField(max_length=255, blank=True)
+
+    # File metadata
+    file_size = models.PositiveIntegerField(default=0, help_text="Compressed size in bytes")
+    width = models.PositiveSmallIntegerField(default=0)
+    height = models.PositiveSmallIntegerField(default=0)
+
+    uploaded_by = models.ForeignKey(
+        'authentication.User',
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        related_name='uploaded_cause_list_images'
+    )
+
+    class Meta:
+        ordering = ['cause_list', 'page_number']
+        indexes = [
+            models.Index(fields=['cause_list', 'page_number']),
+        ]
+
+    def __str__(self):
+        return f"{self.cause_list} — page {self.page_number}"
+
+
 class CauseListTemplate(BaseModel):
     """
     Templates for cause list parsing from different courts.

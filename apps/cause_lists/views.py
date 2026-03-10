@@ -15,7 +15,7 @@ from drf_spectacular.utils import extend_schema, extend_schema_view, OpenApiPara
 
 from apps.common.permissions import CanUploadCauseList, IsRegistryOrAdmin
 from apps.common.pagination import CauseListPagination, StandardResultsSetPagination
-from .models import CauseList, CauseListEntry, CauseListChange, CauseListSubscription
+from .models import CauseList, CauseListEntry, CauseListChange, CauseListSubscription, CauseListImage
 from .serializers import (
     CauseListSerializer,
     CauseListListSerializer,
@@ -27,6 +27,7 @@ from .serializers import (
     CauseListChangeSerializer,
     CauseListSubscriptionSerializer,
     CauseListUploadSerializer,
+    CauseListImageSerializer,
     DailyCauseListSerializer,
 )
 from .filters import CauseListFilter
@@ -391,12 +392,122 @@ class CauseListViewSet(viewsets.ModelViewSet):
         """Get change history for a cause list."""
         cause_list = self.get_object()
         changes = cause_list.changes.all()[:50]
-        
+
         serializer = CauseListChangeSerializer(changes, many=True)
         return Response({
             'success': True,
             'data': serializer.data,
         })
+
+    @extend_schema(tags=['Cause Lists'], summary='Upload cause list images')
+    @action(
+        detail=True,
+        methods=['post'],
+        parser_classes=[MultiPartParser, FormParser],
+        permission_classes=[CanUploadCauseList],
+        url_path='images',
+    )
+    def upload_images(self, request, pk=None):
+        """
+        Upload one or more images for a cause list.
+        Staff snap photos of the physical list at court and upload them here.
+        Each image is automatically compressed and a thumbnail is generated.
+
+        Accepts multipart form data with:
+          - images: one or more image files (JPEG / PNG / WEBP / HEIC)
+          - page_start: (optional int) starting page number for this batch (default: next available)
+        """
+        from django.core.files.base import ContentFile
+        from .image_utils import process_cause_list_image
+
+        cause_list = self.get_object()
+        files = request.FILES.getlist('images')
+
+        if not files:
+            return Response(
+                {'success': False, 'message': 'No images provided.'},
+                status=status.HTTP_400_BAD_REQUEST,
+            )
+
+        # Determine starting page number
+        next_page = cause_list.images.filter(is_deleted=False).count() + 1
+        try:
+            page_start = int(request.data.get('page_start', next_page))
+        except (TypeError, ValueError):
+            page_start = next_page
+
+        created = []
+        errors = []
+
+        for i, file_obj in enumerate(files):
+            try:
+                result = process_cause_list_image(file_obj)
+            except Exception as exc:
+                errors.append({'file': file_obj.name, 'error': str(exc)})
+                continue
+
+            page_number = page_start + i
+            base_name = f"cl_{cause_list.id}_p{page_number:03d}.jpg"
+            thumb_name = f"thumb_{cause_list.id}_p{page_number:03d}.jpg"
+
+            img_instance = CauseListImage(
+                cause_list=cause_list,
+                page_number=page_number,
+                width=result['width'],
+                height=result['height'],
+                file_size=result['file_size'],
+                uploaded_by=request.user,
+            )
+            img_instance.image.save(base_name, ContentFile(result['image_io'].read()), save=False)
+            img_instance.thumbnail.save(thumb_name, ContentFile(result['thumb_io'].read()), save=False)
+            img_instance.save()
+            created.append(img_instance)
+
+        serializer = CauseListImageSerializer(created, many=True, context={'request': request})
+        response_data = {
+            'success': True,
+            'uploaded': len(created),
+            'images': serializer.data,
+        }
+        if errors:
+            response_data['errors'] = errors
+
+        http_status = status.HTTP_201_CREATED if created else status.HTTP_400_BAD_REQUEST
+        return Response(response_data, status=http_status)
+
+    @extend_schema(tags=['Cause Lists'], summary='Delete a cause list image')
+    @action(
+        detail=True,
+        methods=['delete'],
+        permission_classes=[CanUploadCauseList],
+        url_path=r'images/(?P<image_id>[^/.]+)',
+    )
+    def delete_image(self, request, pk=None, image_id=None):
+        """Delete a single image from a cause list (soft delete)."""
+        cause_list = self.get_object()
+        try:
+            image = cause_list.images.get(id=image_id, is_deleted=False)
+        except CauseListImage.DoesNotExist:
+            return Response(
+                {'success': False, 'message': 'Image not found.'},
+                status=status.HTTP_404_NOT_FOUND,
+            )
+        image.soft_delete()
+        return Response({'success': True, 'message': 'Image deleted.'})
+
+    @extend_schema(tags=['Cause Lists'], summary='List images for a cause list')
+    @action(
+        detail=True,
+        methods=['get'],
+        url_path='images',
+        permission_classes=[AllowAny],
+    )
+    def list_images(self, request, pk=None):
+        """Return all images for a cause list ordered by page number."""
+        cause_list = self.get_object()
+        images = cause_list.images.filter(is_deleted=False).order_by('page_number')
+        serializer = CauseListImageSerializer(images, many=True, context={'request': request})
+        return Response({'success': True, 'data': serializer.data})
 
 
 @extend_schema_view(

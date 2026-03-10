@@ -77,27 +77,9 @@ class CourtViewSet(viewsets.ModelViewSet):
     
     def get_queryset(self):
         queryset = super().get_queryset()
-        
-        # Cache frequently accessed court lists
-        cache_key = f"courts:list:{self.request.query_params.urlencode()}"
-        cached = cache.get(cache_key)
-        
-        if cached and self.action == 'list':
-            return cached
-        
         if self.action == 'list':
             queryset = queryset.filter(is_active=True)
-        
         return queryset
-    
-    def list(self, request, *args, **kwargs):
-        response = super().list(request, *args, **kwargs)
-        
-        # Cache the result
-        cache_key = f"courts:list:{request.query_params.urlencode()}"
-        cache.set(cache_key, response.data, timeout=300)  # 5 minutes
-        
-        return response
     
     @extend_schema(tags=['Courts'], summary='Get court statistics')
     @action(detail=False, methods=['get'])

@@ -7,7 +7,7 @@ services:
     env_file:
       - .env
     ports:
-      - "5432:5432"
+      - "5432:ls5432"
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U cynosure"]
       interval: 10s
