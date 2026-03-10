@@ -13,7 +13,7 @@ ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '').split(',')
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 # Production logging
-LOGGING['handlers']['file']['filename'] = '/var/log/cynosure/cynosure.log'
+LOGGING['handlers']['file']['filename'] = '/app/logs/cynosure.log'
 
 # Use real email backend
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
