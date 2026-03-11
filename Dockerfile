@@ -29,10 +29,10 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 
 # Create directories
-RUN mkdir -p /app/logs /app/staticfiles /app/media
+RUN mkdir -p /app/logs /app/staticfiles /app/media /app/static
 
-# Collect static files
-RUN python manage.py collectstatic --noinput --clear
+# Collect static files with production settings so WhiteNoise manifest is generated
+RUN DJANGO_ENV=production python manage.py collectstatic --noinput --clear
 
 # Create non-root user
 RUN adduser --disabled-password --gecos '' appuser
