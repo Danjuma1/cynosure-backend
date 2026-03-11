@@ -43,4 +43,4 @@ USER appuser
 EXPOSE 8085
 
 # Default command
-CMD ["gunicorn", "--bind", "0.0.0.0:8085", "--workers", "4", "--threads", "2", "config.wsgi:application"]
+CMD ["gunicorn", "--bind", "0.0.0.0:8085", "--workers", "4", "--threads", "2", "--worker-tmp-dir", "/dev/shm", "config.wsgi:application"]
