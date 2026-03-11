@@ -12,20 +12,26 @@ ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '').split(',')
 # Additional production security
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
-# Disable logging in production
+# Only log errors in production (suppress info/debug noise)
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': True,
     'handlers': {
-        'null': {
-            'class': 'logging.NullHandler',
+        'console': {
+            'class': 'logging.StreamHandler',
+            'level': 'ERROR',
         },
     },
     'root': {
-        'handlers': ['null'],
-        'level': 'CRITICAL',
+        'handlers': ['console'],
+        'level': 'ERROR',
     },
 }
+
+# CSRF trusted origins (required in Django 4.0+ for admin login)
+CSRF_TRUSTED_ORIGINS = [
+    o for o in os.environ.get('CSRF_TRUSTED_ORIGINS', '').split(',') if o
+]
 
 # Use real email backend
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
