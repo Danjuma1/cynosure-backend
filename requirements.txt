@@ -57,6 +57,7 @@ pytz>=2023.3
 # Production Server
 gunicorn>=21.2
 uvicorn>=0.23
+whitenoise>=6.6
 
 # Monitoring (optional)
 sentry-sdk>=1.29
