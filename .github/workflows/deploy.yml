@@ -1,0 +1,28 @@
+name: Deploy Backend
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Deploy to Server
+      uses: appleboy/ssh-action@v1.0.3
+      with:
+        host: ${{ secrets.SERVER_HOST }}
+        username: ${{ secrets.SERVER_USER }}
+        key: ${{ secrets.SERVER_SSH_KEY }}
+
+        script: |
+          cd ~/cynosure-backend
+          git pull origin main
+
+          sudo docker compose down
+          sudo docker compose up -d --build
+
+          sudo docker compose exec web python manage.py migrate
+          sudo docker compose exec web python manage.py collectstatic --noinput
