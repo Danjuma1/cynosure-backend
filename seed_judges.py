@@ -15,10 +15,8 @@ import os
 # Config
 # ---------------------------------------------------------------------------
 
-FIXTURE_PATH = os.environ.get(
-    'FIXTURE_PATH',
-    os.path.join(os.path.dirname(__file__), 'final_fixture.json'),
-)
+FIXTURE_PATH = os.path.join(os.path.dirname(__file__), 'final_fixture.json')
+FIXTURE_OUT = os.environ.get('FIXTURE_PATH', FIXTURE_PATH)
 UUID_NS = uuid.UUID('6ba7b810-9dad-11d1-80b4-00c04fd430c8')  # URL namespace
 
 # ---------------------------------------------------------------------------
@@ -586,7 +584,7 @@ def main():
     # Assemble final fixture
     output = base_records + NEW_COURTS + all_judges
 
-    with open(FIXTURE_PATH, 'w', encoding='utf-8') as f:
+    with open(FIXTURE_OUT, 'w', encoding='utf-8') as f:
         json.dump(output, f, indent=2, ensure_ascii=False)
 
     # Summary
@@ -610,7 +608,7 @@ def main():
         print(f'  {label}: {counts.get(cid, 0)} judges')
     print(f'  Total judges: {len(all_judges)}')
     print(f'  Total fixture records: {len(output)}')
-    print(f'  Written to: {FIXTURE_PATH}')
+    print(f'  Written to: {FIXTURE_OUT}')
 
 
 if __name__ == '__main__':
