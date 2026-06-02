@@ -15,7 +15,10 @@ import os
 # Config
 # ---------------------------------------------------------------------------
 
-FIXTURE_PATH = os.path.join(os.path.dirname(__file__), 'final_fixture.json')
+FIXTURE_PATH = os.environ.get(
+    'FIXTURE_PATH',
+    os.path.join(os.path.dirname(__file__), 'final_fixture.json'),
+)
 UUID_NS = uuid.UUID('6ba7b810-9dad-11d1-80b4-00c04fd430c8')  # URL namespace
 
 # ---------------------------------------------------------------------------
