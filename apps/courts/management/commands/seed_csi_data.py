@@ -84,7 +84,7 @@ CA_DATA = [
 
 
 # ── Federal High Court data ──────────────────────────────────────────────────
-# Format: (name_as_given, is_chief_judge)
+# Format: (name_as_given, sitting_location, is_chief_judge)
 
 FHC_DATA = [
     {'code': 'FHC-ABJ', 'name': 'Federal High Court — Abuja Division',
@@ -92,38 +92,38 @@ FHC_DATA = [
      'address': 'Federal High Court Complex, Off Shehu Shagari Way, Central Business District, Abuja',
      'active': True,
      'judges': [
-         ('John T. Tsoho',                True),
-         ('G.K. Olotu',                   False),
-         ('B.F.M. Nyako',                 False),
-         ('R.N. Ofili-Ajumogobia',        False),
-         ('A.R. Mohammed',                False),
-         ('I.E. Ekwo',                    False),
-         ('D.U. Okorowo',                 False),
-         ('Joyce Obehi Abdulmalik',       False),
-         ('James Kolawale Omotosho',      False),
-         ('Emeka Nwite',                  False),
-         ('Obiora Atuegwu Egwuatu',       False),
-         ('Mobolaji Olubukola Olajuwon',  False),
-         ('Nkeonye Evelyn Maha',          False),
-         ('Salim Olasupo Ibrahim',        False),
-         ('Onah Chigozie Sergius',        False),
+         ('John T. Tsoho',                'FHC Abuja',  True),
+         ('G.K. Olotu',                   'FHC Abuja',  False),
+         ('B.F.M. Nyako',                 'FHC Abuja',  False),
+         ('R.N. Ofili-Ajumogobia',        'FHC Abuja',  False),
+         ('A.R. Mohammed',                'FHC Abuja',  False),
+         ('I.E. Ekwo',                    'FHC Abuja',  False),
+         ('D.U. Okorowo',                 'FHC Abuja',  False),
+         ('Joyce Obehi Abdulmalik',       'FHC Abuja',  False),
+         ('James Kolawale Omotosho',      'FHC Abuja',  False),
+         ('Emeka Nwite',                  'FHC Abuja',  False),
+         ('Obiora Atuegwu Egwuatu',       'FHC Abuja',  False),
+         ('Mobolaji Olubukola Olajuwon',  'FHC Abuja',  False),
+         ('Nkeonye Evelyn Maha',          'FHC Abuja',  False),
+         ('Salim Olasupo Ibrahim',        'FHC Abuja',  False),
+         ('Onah Chigozie Sergius',        'FHC Abuja',  False),
      ]},
     {'code': 'FHC-LAG', 'name': 'Federal High Court — Lagos Division',
      'state': 'LA', 'city': 'Lagos',
      'address': 'No. 1 Sapara Williams Close, off Adeola Hopewell Street, Victoria Island, Lagos',
      'active': True,
      'judges': [
-         ('A.O. Faji',                    False),
-         ('Musa Kakaki',                  False),
-         ('Ogazi Friday Nkemakonam',      False),
-         ('Daniel E. Osiagor',            False),
-         ('Akintayo Aluko',               False),
-         ('A.O. Owoeye',                  False),
-         ('C.J. Aneke',                   False),
-         ('D.I. Dipeolu',                 False),
-         ('Y.S. Bogoro',                  False),
-         ('A. Lewis-Allagoa',             False),
-         ('I.A. Kala',                    False),
+         ('A.O. Faji',                    'Court 2 FHC, Ikoyi',   False),
+         ('Musa Kakaki',                  'Court 10 FHC, Ikoyi',  False),
+         ('Ogazi Friday Nkemakonam',      'Court 12 FHC, Ikoyi',  False),
+         ('Daniel E. Osiagor',            'Court 6 FHC, Ikoyi',   False),
+         ('Akintayo Aluko',               'Court 7 FHC, Ikoyi',   False),
+         ('A.O. Owoeye',                  'Court 9 FHC, Ikoyi',   False),
+         ('C.J. Aneke',                   'Court 4 FHC, Ikoyi',   False),
+         ('D.I. Dipeolu',                 'Court 8 FHC, Ikoyi',   False),
+         ('Y.S. Bogoro',                  'Court 5 FHC, Ikoyi',   False),
+         ('A. Lewis-Allagoa',             'Court 3 FHC, Ikoyi',   False),
+         ('I.A. Kala',                    'Court 11 FHC, Ikoyi',  False),
      ]},
     {'code': 'FHC-PH',  'name': 'Federal High Court — Port Harcourt Division', 'state': 'RI', 'city': 'Port Harcourt', 'active': False, 'judges': []},
     {'code': 'FHC-ABA', 'name': 'Federal High Court — Abakaliki Division',     'state': 'EB', 'city': 'Abakaliki',    'active': False, 'judges': []},
@@ -165,7 +165,7 @@ FHC_DATA = [
 
 
 # ── National Industrial Court data ───────────────────────────────────────────
-# Format: (name_as_given, is_president)
+# Format: (name_as_given, sitting_location, is_president)
 
 NIC_DATA = [
     {'code': 'NIC-ABJ', 'name': 'National Industrial Court — Abuja Division',
@@ -173,27 +173,27 @@ NIC_DATA = [
      'address': 'Plot 10, Port Harcourt Crescent, Off Gimbiya Street, Area 11, FCT',
      'phone': '07040101202', 'active': True,
      'judges': [
-         ('B.B. Kanyip',          True),   # President NICN
-         ('O.A. Obaseki-Osaghae', False),
-         ('Z.M. Bashir',          False),
-         ('O.O. Arowosegbe',      False),
-         ('S.O. Adeniyi',         False),
-         ('Kado Sanusi',          False),
-         ('John I. Targema',      False),
+         ('B.B. Kanyip',          'NICN Abuja',  True),
+         ('O.A. Obaseki-Osaghae', 'NICN Abuja',  False),
+         ('Z.M. Bashir',          'NICN Abuja',  False),
+         ('O.O. Arowosegbe',      'NICN Abuja',  False),
+         ('S.O. Adeniyi',         'NICN Abuja',  False),
+         ('Kado Sanusi',          'NICN Abuja',  False),
+         ('John I. Targema',      'NICN Abuja',  False),
      ]},
     {'code': 'NIC-LAG', 'name': 'National Industrial Court — Lagos Division',
      'state': 'LA', 'city': 'Lagos',
      'address': '31, Lugard Avenue, Ikoyi, Lagos',
      'phone': '08038690335', 'active': True,
      'judges': [
-         ('A.N. Ubaka',         False),
-         ('R.B. Gwandu',        False),
-         ('S.A. Yelwa',         False),
-         ('Joyce A.O. Damachi', False),
-         ('I.G. Nweneka',       False),
-         ('M.N. Esowe',         False),
-         ('E.A. Oji',           False),
-         ('I.J. Essien',        False),
+         ('A.N. Ubaka',         'Court 3 NICN Lagos',  False),
+         ('R.B. Gwandu',        'Court 4 NICN Lagos',  False),
+         ('S.A. Yelwa',         'Court 9 NICN Lagos',  False),
+         ('Joyce A.O. Damachi', 'Court 8 NICN Lagos',  False),
+         ('I.G. Nweneka',       'Court 5 NICN Lagos',  False),
+         ('M.N. Esowe',         'Court 2 NICN Lagos',  False),
+         ('E.A. Oji',           'Court 7 NICN Lagos',  False),
+         ('I.J. Essien',        'Court 6 NICN Lagos',  False),
      ]},
     {'code': 'NIC-PH',  'name': 'National Industrial Court — Port Harcourt Division', 'state': 'RI', 'city': 'Port Harcourt', 'active': False, 'judges': []},
     {'code': 'NIC-ABA', 'name': 'National Industrial Court — Abakaliki Division',     'state': 'EB', 'city': 'Abakaliki',    'active': False, 'judges': []},
@@ -390,85 +390,166 @@ LAGOS_SHC_JUDGES = [
 ]
 
 
-# ── Lagos Magistrates (rows 3-152 of the official list; rows 1-2 are registrar staff) ──
-# Format: (name_as_given, is_chief_magistrate)
+# ── Lagos Magistrates (full official list including registrar staff at top) ──
+# Format: (name_as_given, grade/court_number, is_chief)
+# is_chief=True marks the Chief Registrar and Chief Magistrates (Admin)
 
 LAGOS_MAGISTRATES = [
-    ('P.A. Ojo',              True),   ('Y.O. Aje-Afunwa',       True),
-    ('A.O. Adedayo',          True),   ('O.I. Adelaja',          False),
-    ('A.A. Oshoniyi',         False),  ('O.O. Oshin',            False),
-    ('F.O. Aigbokhaevbo',     False),  ('F.A. Azeez',            False),
-    ('A. Ipaye-Nwachukwu',    False),  ('T.A. Elias',            False),
-    ('O.J. Awope',            False),  ('A.K. Shonubi',          False),
-    ('T.O. Shomade',          False),  ('A.F.O. Botoku',         False),
-    ('K.B. Ayeye',            False),  ('A.M. Alli-Balogun',     False),
-    ('B.O. Osunsanmi',        False),  ('A.O. Komolafe',         False),
-    ('O.I. Oguntade',         False),  ('O.O. Martins',          False),
-    ('Y.J. Badejo-Okusanya',  False),  ('R.O. Davies',           False),
-    ('A.O. Layinka',          False),  ('O. Sule-Amzat',         False),
-    ('O.O. Olatunji',         False),  ('E.O. Ogunkanmi',        False),
-    ('F.M. Kayode-Alamu',     False),  ('B.A. Sonuga',           False),
-    ('T. Akanni',             False),  ('O.A. Adegbite',         False),
-    ('P.A. Adekomaiya',       False),  ('M.K.O. Fadeyi',         False),
-    ('W.B. Balogun',          False),  ('J.O.E. Adeyemi',        False),
-    ('M. Owumi',              False),  ('A.A. Paul',             False),
-    ('O.A. Komolafe',         False),  ('K.O. Doja-Ojo',         False),
-    ('C.J. Momodu',           False),  ('A.O. Ajibade',          False),
-    ('A.O. Gbajumo',          False),  ('O.G. Oghre',            False),
-    ('O.A. Akinde',           False),  ('H.O.A. Amos',           False),
-    ('O. Kusanu',             False),  ('P.E. Nwaka',            False),
-    ('A.B. Olagbegi-Adelabu', False),  ('H.O. Omisore',          False),
-    ('A.M. Olumide-Fusika',   False),  ('F.J. Adefioye',         False),
-    ('E. Kubeinje',           False),  ('O.O.A. Fowowe-Erusiafe',False),
-    ('O.A. Aka-Bashorun',     False),  ('G.L. Hotepo',           False),
-    ('J.A. Adegun',           False),  ('A.T. Omoyele',          False),
-    ('M.I. Dan-Oni',          False),  ('A.S. Odusanya',         False),
-    ('S.K. Matepo',           False),  ('M.O. Olubi',            False),
-    ('M.O. Tanimola',         False),  ('O.M. Ajayi',            False),
-    ('K.O. Ogundare',         False),  ('J. Ugbomoiko',          False),
-    ('A.O. Oshodi-Makanju',   False),  ('A.A. Fashola',          False),
-    ('L.Y. Balogun',          False),  ('B.O. Ope-Agbe',         False),
-    ('B. Folarin-Williams',   False),  ('A.A. Adesanya',         False),
-    ('A.O. Onilogbo',         False),  ('A.A. Famobiwo',         False),
-    ('L.A. Owolabi',          False),  ('F.F. George',           False),
-    ('K.A. Ariyo',            False),  ('O.A. Olagbende',        False),
-    ('A.M. Davies',           False),  ('M.O. Osinbajo',         False),
-    ('O.A. Erinle',           False),  ('O.O. Ojuromi',          False),
-    ('F. Dalley',             False),  ('N.A. Layeni',           False),
-    ('G.O. Anifowoshe',       False),  ('I.O. Alaka',            False),
-    ('T.O. Babalola',         False),  ('O.O. Otitoju',          False),
-    ('O.A. Akokhia',          False),  ('Y.O. Ekogbulu',         False),
-    ('A.A. Gbajumo-Ayoku',    False),  ('A.A. Adetunji',         False),
-    ('B.I. Bakare',           False),  ('F. Ikobayo',            False),
-    ('T.A. Idowu',            False),  ('O.A. Salawu',           False),
-    ('L.O. Kazeem',           False),  ('T.O. Abayomi',          False),
-    ('O.I. Raji',             False),  ('K.S. Abdul-Salam',      False),
-    ('A.O. Ogbe',             False),  ('Y.O. Aro-Lambo',        False),
-    ('M.B. Amore',            False),  ('O.A. Odunayo',          False),
-    ('A.S. Okubule',          False),  ('O.S. Abioye',           False),
-    ('A.K. Tella',            False),  ('T.A. Ojo',              False),
-    ('A.K. Dosunmu',          False),  ('I.A. Abina',            False),
-    ('K.J. Layeni',           False),  ('R.A. Oladele',          False),
-    ('W.A. Salami',           False),  ('M.F. Onamusi',          False),
-    ('O.A. Ogunjobi',         False),  ('T. Anjorin-Ajose',      False),
-    ('O.O. Akingbesote',      False),  ('O.O. Adeshina',         False),
-    ('T.F. Oyaniyi',          False),  ('O.C. Emeka-Opara',      False),
-    ('C.K. Tunji-Carrena',    False),  ('K.K. Awoyinka',         False),
-    ('O.A. Aderibigbe',       False),  ('S.A. Grillo',           False),
-    ('S.O. Obasa',            False),  ('F.A. Shittabey',        False),
-    ('O.O. Fajana',           False),  ('T.B. Are',              False),
-    ('O.O. Ekundayo',         False),  ('F.O. Sasanya',          False),
-    ('A.B. Ajiferuke',        False),  ('O. Isreal-Adelakun',    False),
-    ('M.A. Agbaje',           False),  ('T.J. Agbona',           False),
-    ('A.O. Olorunfemi',       False),  ('O.R. Williams-Isichei', False),
-    ('R.I. Ayilara',          False),  ('O.A. Daodu',            False),
-    ('F.D. Hughes',           False),  ('M.O. Kadiri',           False),
-    ('H.B. Mogaji',           False),  ('A.A. Runsewe',          False),
-    ('T.R. Shekoni-Adeyekun', False),  ('O.O. Fagbohun',         False),
-    ('A.R. Morafa',           False),  ('M.C. Ayinde',           False),
-    ('M.O. Dawodu',           False),  ('R.E. Ojudun',           False),
-    ('A.O. Alogba',           False),  ('O.D. Njoku',            False),
-    ('T.A. Popoola',          False),  ('G.O. Tiamiyu',          False),
+    # Rows 1-2: Registrar staff (head of court administration)
+    ('D.T. Olatokun',         'Grade 96',   True),   # Chief Registrar
+    ('O.A. Okunuga',          'Grade 97',   False),  # Deputy Chief Registrar
+    # Rows 3-5: Chief Magistrates (Admin)
+    ('P.A. Ojo',              'Grade 101',  True),
+    ('Y.O. Aje-Afunwa',       'Grade 102',  True),
+    ('A.O. Adedayo',          'Grade 100',  True),
+    # Rows 6-152: Magistrates
+    ('O.I. Adelaja',          'Grade 106',  False),
+    ('A.A. Oshoniyi',         'Grade 108',  False),
+    ('O.O. Oshin',            'Grade 104',  False),
+    ('F.O. Aigbokhaevbo',     'Grade 113',  False),
+    ('F.A. Azeez',            'Grade 114',  False),
+    ('A. Ipaye-Nwachukwu',    'Grade 115',  False),
+    ('T.A. Elias',            'Grade 118',  False),
+    ('O.J. Awope',            'Grade 120',  False),
+    ('A.K. Shonubi',          'Grade 121',  False),
+    ('T.O. Shomade',          'Grade 122',  False),
+    ('A.F.O. Botoku',         'Grade 123',  False),
+    ('K.B. Ayeye',            'Grade 126',  False),
+    ('A.M. Alli-Balogun',     'Grade 127',  False),
+    ('B.O. Osunsanmi',        'Grade 128',  False),
+    ('A.O. Komolafe',         'Grade 129',  False),
+    ('O.I. Oguntade',         'Grade 133',  False),
+    ('O.O. Martins',          'Grade 135',  False),
+    ('Y.J. Badejo-Okusanya',  'Grade 136',  False),
+    ('R.O. Davies',           'Grade 140',  False),
+    ('A.O. Layinka',          'Grade 143',  False),
+    ('O. Sule-Amzat',         'Grade 145',  False),
+    ('O.O. Olatunji',         'Grade 141',  False),
+    ('E.O. Ogunkanmi',        'Grade 137',  False),
+    ('F.M. Kayode-Alamu',     'Grade 144',  False),
+    ('B.A. Sonuga',           'Grade 134',  False),
+    ('T. Akanni',             'Grade 146',  False),
+    ('O.A. Adegbite',         'Grade 147',  False),
+    ('P.A. Adekomaiya',       'Grade 148',  False),
+    ('M.K.O. Fadeyi',         'Grade 149',  False),
+    ('W.B. Balogun',          'Grade 150',  False),
+    ('J.O.E. Adeyemi',        'Grade 263',  False),
+    ('M. Owumi',              'Grade 154',  False),
+    ('A.A. Paul',             'Grade 155',  False),
+    ('O.A. Komolafe',         'Grade 157',  False),
+    ('K.O. Doja-Ojo',         'Grade 158',  False),
+    ('C.J. Momodu',           'Grade 159',  False),
+    ('A.O. Ajibade',          'Grade 160',  False),
+    ('A.O. Gbajumo',          'Grade 161',  False),
+    ('O.G. Oghre',            'Grade 152',  False),
+    ('O.A. Akinde',           'Grade 156',  False),
+    ('H.O.A. Amos',           'Grade 153',  False),
+    ('O. Kusanu',             'Grade 166',  False),
+    ('P.E. Nwaka',            'Grade 168',  False),
+    ('A.B. Olagbegi-Adelabu', 'Grade 169',  False),
+    ('H.O. Omisore',          'Grade 170',  False),
+    ('A.M. Olumide-Fusika',   'Grade 171',  False),
+    ('F.J. Adefioye',         'Grade 172',  False),
+    ('E. Kubeinje',           'Grade 173',  False),
+    ('O.O.A. Fowowe-Erusiafe','Grade 175',  False),
+    ('O.A. Aka-Bashorun',     'Grade 177',  False),
+    ('G.L. Hotepo',           'Grade 174',  False),
+    ('J.A. Adegun',           'Grade 176',  False),
+    ('A.T. Omoyele',          'Grade 179',  False),
+    ('M.I. Dan-Oni',          'Grade 180',  False),
+    ('A.S. Odusanya',         'Grade 181',  False),
+    ('S.K. Matepo',           'Grade 182',  False),
+    ('M.O. Olubi',            'Grade 183',  False),
+    ('M.O. Tanimola',         'Grade 184',  False),
+    ('O.M. Ajayi',            'Grade 185',  False),
+    ('K.O. Ogundare',         'Grade 187',  False),
+    ('J. Ugbomoiko',          'Grade 188',  False),
+    ('A.O. Oshodi-Makanju',   'Grade 190',  False),
+    ('A.A. Fashola',          'Grade 191',  False),
+    ('L.Y. Balogun',          'Grade 192',  False),
+    ('B.O. Ope-Agbe',         'Grade 193',  False),
+    ('B. Folarin-Williams',   'Grade 195',  False),
+    ('A.A. Adesanya',         'Grade 196',  False),
+    ('A.O. Onilogbo',         'Grade 117',  False),
+    ('A.A. Famobiwo',         'Grade 189',  False),
+    ('L.A. Owolabi',          'Grade 264',  False),
+    ('F.F. George',           'Grade 266',  False),
+    ('K.A. Ariyo',            'Grade 267',  False),
+    ('O.A. Olagbende',        'Grade 268',  False),
+    ('A.M. Davies',           'Grade 269',  False),
+    ('M.O. Osinbajo',         'Grade 270',  False),
+    ('O.A. Erinle',           'Grade 271',  False),
+    ('O.O. Ojuromi',          'Grade 272',  False),
+    ('F. Dalley',             'Grade 273',  False),
+    ('N.A. Layeni',           'Grade 274',  False),
+    ('G.O. Anifowoshe',       'Grade 275',  False),
+    ('I.O. Alaka',            'Grade 276',  False),
+    ('T.O. Babalola',         'Grade 279',  False),
+    ('O.O. Otitoju',          'Grade 280',  False),
+    ('O.A. Akokhia',          'Grade 282',  False),
+    ('Y.O. Ekogbulu',         'Grade 277',  False),
+    ('A.A. Gbajumo-Ayoku',    'Grade 278',  False),
+    ('A.A. Adetunji',         'Grade 281',  False),
+    ('B.I. Bakare',           'Grade 283',  False),
+    ('F. Ikobayo',            'Grade 284',  False),
+    ('T.A. Idowu',            'Grade 285',  False),
+    ('O.A. Salawu',           'Grade 286',  False),
+    ('L.O. Kazeem',           'Grade 287',  False),
+    ('T.O. Abayomi',          'Grade 288',  False),
+    ('O.I. Raji',             'Grade 289',  False),
+    ('K.S. Abdul-Salam',      'Grade 292',  False),
+    ('A.O. Ogbe',             'Grade 290',  False),
+    ('Y.O. Aro-Lambo',        'Grade 291',  False),
+    ('M.B. Amore',            'Grade 293',  False),
+    ('O.A. Odunayo',          'Grade 295',  False),
+    ('A.S. Okubule',          'Grade 294',  False),
+    ('O.S. Abioye',           'Grade 296',  False),
+    ('A.K. Tella',            'Grade 299',  False),
+    ('T.A. Ojo',              'Grade 298',  False),
+    ('A.K. Dosunmu',          'Grade 297',  False),
+    ('I.A. Abina',            'Grade 300',  False),
+    ('K.J. Layeni',           'Grade 301',  False),
+    ('R.A. Oladele',          'Grade 302',  False),
+    ('W.A. Salami',           'Grade 303',  False),
+    ('M.F. Onamusi',          'Grade 408',  False),
+    ('O.A. Ogunjobi',         'Grade 409',  False),
+    ('T. Anjorin-Ajose',      'Grade 410',  False),
+    ('O.O. Akingbesote',      'Grade 411',  False),
+    ('O.O. Adeshina',         'Grade 730',  False),
+    ('T.F. Oyaniyi',          'Grade 731',  False),
+    ('O.C. Emeka-Opara',      'Grade 732',  False),
+    ('C.K. Tunji-Carrena',    'Grade 733',  False),
+    ('K.K. Awoyinka',         'Grade 734',  False),
+    ('O.A. Aderibigbe',       'Grade 736',  False),
+    ('S.A. Grillo',           'Grade 737',  False),
+    ('S.O. Obasa',            'Grade 735',  False),
+    ('F.A. Shittabey',        'Grade 738',  False),
+    ('O.O. Fajana',           'Grade 739',  False),
+    ('T.B. Are',              'Grade 741',  False),
+    ('O.O. Ekundayo',         'Grade 740',  False),
+    ('F.O. Sasanya',          'Grade 742',  False),
+    ('A.B. Ajiferuke',        'Grade 743',  False),
+    ('O. Isreal-Adelakun',    'Grade 744',  False),
+    ('M.A. Agbaje',           'Grade 747',  False),
+    ('T.J. Agbona',           'Grade 746',  False),
+    ('A.O. Olorunfemi',       'Grade 745',  False),
+    ('O.R. Williams-Isichei', 'Grade 748',  False),
+    ('R.I. Ayilara',          'Grade 752',  False),
+    ('O.A. Daodu',            'Grade 755',  False),
+    ('F.D. Hughes',           'Grade 749',  False),
+    ('M.O. Kadiri',           'Grade 753',  False),
+    ('H.B. Mogaji',           'Grade 751',  False),
+    ('A.A. Runsewe',          'Grade 750',  False),
+    ('T.R. Shekoni-Adeyekun', 'Grade 754',  False),
+    ('O.O. Fagbohun',         'Grade 756',  False),
+    ('A.R. Morafa',           'Grade 757',  False),
+    ('M.C. Ayinde',           'Grade 759',  False),
+    ('M.O. Dawodu',           'Grade 758',  False),
+    ('R.E. Ojudun',           'Grade 760',  False),
+    ('A.O. Alogba',           'Grade 761',  False),
+    ('O.D. Njoku',            'Grade 763',  False),
+    ('T.A. Popoola',          'Grade 762',  False),
+    ('G.O. Tiamiyu',          '',           False),
 ]
 
 
@@ -553,15 +634,16 @@ class Command(BaseCommand):
             if d.get('judges'):
                 Judge.objects.filter(court=court).delete()
 
-            for name, is_chief in d.get('judges', []):
+            for name, location, is_chief in d.get('judges', []):
                 first, last = parse_judge_name(name)
                 title = 'CHIEF_JUDGE' if is_chief else 'HON_JUSTICE'
                 Judge.objects.create(
                     court=court, first_name=first, last_name=last,
                     title=title, is_chief_judge=is_chief,
+                    office_location=location,
                     status='active', is_active=True,
                 )
-                self.stdout.write(f'    Judge: {first} {last}')
+                self.stdout.write(f'    Judge: {first} {last} — {location}')
 
     # ── NIC ───────────────────────────────────────────────────────────────────
 
@@ -580,15 +662,16 @@ class Command(BaseCommand):
             if d.get('judges'):
                 Judge.objects.filter(court=court).delete()
 
-            for name, is_president in d.get('judges', []):
+            for name, location, is_president in d.get('judges', []):
                 first, last = parse_judge_name(name)
                 title = 'PRESIDENT' if is_president else 'HON_JUSTICE'
                 Judge.objects.create(
                     court=court, first_name=first, last_name=last,
                     title=title, is_chief_judge=is_president,
+                    office_location=location,
                     status='active', is_active=True,
                 )
-                self.stdout.write(f'    Judge: {first} {last}')
+                self.stdout.write(f'    Judge: {first} {last} — {location}')
 
     # ── FCT High Court ────────────────────────────────────────────────────────
 
@@ -621,8 +704,8 @@ class Command(BaseCommand):
     # ── State High Courts ─────────────────────────────────────────────────────
 
     def _seed_shc(self):
-        # Lagos and FCT are active; Rivers is locked
-        active_states = {'LA', 'FC'}
+        # Lagos is active; FCT HC is handled separately by _seed_fct_hc (FCT-HC-ABJ)
+        active_states = {'LA'}
         for state_code, state_name, capital in ALL_STATES:
             code = f'SHC-{state_code}'
             name = 'FCT High Court' if state_code == 'FC' else f'{state_name} State High Court'
@@ -684,12 +767,14 @@ class Command(BaseCommand):
     def _seed_magistrates_flat(self, court, magistrates_data):
         """Seed magistrates directly under the court (no division — matches frontend flow)."""
         Judge.objects.filter(court=court).delete()
-        for name, is_chief in magistrates_data:
+        for name, location, is_chief in magistrates_data:
             first, last = parse_judge_name(name)
+            title = 'CHIEF_JUDGE' if is_chief else 'HON_JUSTICE'
             Judge.objects.create(
                 court=court, first_name=first, last_name=last,
-                title='HON_JUSTICE',
+                title=title,
                 is_chief_judge=is_chief,
+                office_location=location,
                 status='active', is_active=True,
             )
         self.stdout.write(f'    Seeded {len(magistrates_data)} magistrates')

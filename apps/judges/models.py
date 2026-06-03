@@ -100,7 +100,7 @@ class Judge(BaseModel):
     is_active = models.BooleanField(default=True)
     
     class Meta:
-        ordering = ['last_name', 'first_name']
+        ordering = ['-is_chief_judge', 'last_name', 'first_name']
         indexes = [
             models.Index(fields=['court', 'status']),
             models.Index(fields=['status', 'is_active']),
