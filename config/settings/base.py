@@ -58,6 +58,7 @@ LOCAL_APPS = [
     'apps.scraping',
     'apps.common',
     'apps.efiling',
+    'apps.brief_connect',
 ]
 
 INSTALLED_APPS = CUSTOM_USER_APP + DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS

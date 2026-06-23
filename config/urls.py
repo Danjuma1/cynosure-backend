@@ -24,6 +24,7 @@ api_v1_patterns = [
     path('firms/', include('apps.firms.urls')),
     path('efiling/', include('apps.efiling.urls')),
     path('admin-panel/', include('apps.adminpanel.urls')),
+    path('brief-connect/', include('apps.brief_connect.urls')),
 ]
 
 urlpatterns = [

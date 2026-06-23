@@ -27,6 +27,12 @@ class Notification(TimeStampedModel):
         ('filing_rejected', 'Filing Rejected'),
         ('reminder', 'Reminder'),
         ('system', 'System Notification'),
+        # Brief Connect
+        ('brief_connect_new_request', 'New Brief Request'),
+        ('brief_connect_application', 'Brief Application Received'),
+        ('brief_connect_accepted', 'Brief Application Accepted'),
+        ('brief_connect_rejected', 'Brief Application Not Selected'),
+        ('brief_connect_completed', 'Brief Engagement Completed'),
     ]
     
     PRIORITY_CHOICES = [

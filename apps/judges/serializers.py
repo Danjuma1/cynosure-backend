@@ -12,14 +12,15 @@ class JudgeListSerializer(serializers.ModelSerializer):
     full_name = serializers.ReadOnlyField()
     formal_name = serializers.ReadOnlyField()
     court_name = serializers.CharField(source='court.name', read_only=True)
+    court_type = serializers.CharField(source='court.court_type', read_only=True)
     division_name = serializers.CharField(source='division.name', read_only=True)
-    
+
     class Meta:
         model = Judge
         fields = [
             'id', 'title', 'title_display', 'first_name', 'last_name',
             'full_name', 'formal_name', 'photo',
-            'court', 'court_name', 'division', 'division_name',
+            'court', 'court_name', 'court_type', 'division', 'division_name',
             'status', 'status_display', 'is_active',
             'total_cases', 'pending_cases', 'follower_count',
         ]
