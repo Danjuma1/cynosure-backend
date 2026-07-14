@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import BriefRequest, BriefApplication, BriefEngagement, BriefReview
+from .models import BriefRequest, BriefApplication, BriefEngagement, BriefReview, FeeOffer
 
 
 @admin.register(BriefRequest)
@@ -18,6 +18,15 @@ class BriefApplicationAdmin(admin.ModelAdmin):
     list_filter = ['status']
     search_fields = ['applicant__email', 'brief_request__case_number']
     raw_id_fields = ['applicant', 'brief_request']
+    readonly_fields = ['created_at', 'updated_at']
+
+
+@admin.register(FeeOffer)
+class FeeOfferAdmin(admin.ModelAdmin):
+    list_display = ['id', 'application', 'proposed_by', 'amount', 'status', 'created_at']
+    list_filter = ['status']
+    search_fields = ['proposed_by__email', 'application__id']
+    raw_id_fields = ['application', 'proposed_by']
     readonly_fields = ['created_at', 'updated_at']
 
 

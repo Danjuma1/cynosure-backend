@@ -59,6 +59,10 @@ LOCAL_APPS = [
     'apps.common',
     'apps.efiling',
     'apps.brief_connect',
+    'apps.policies',
+    'apps.messaging',
+    'apps.payments',
+    'apps.disputes',
 ]
 
 INSTALLED_APPS = CUSTOM_USER_APP + DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
@@ -305,6 +309,10 @@ WEBPUSH_SETTINGS = {
     'VAPID_ADMIN_EMAIL': os.environ.get('VAPID_ADMIN_EMAIL', 'admin@cynosure.ng'),
 }
 
+# Paystack (Brief Connect escrow payments/payouts)
+PAYSTACK_SECRET_KEY = os.environ.get('PAYSTACK_SECRET_KEY', '')
+PAYSTACK_PUBLIC_KEY = os.environ.get('PAYSTACK_PUBLIC_KEY', '')
+
 # Security Settings
 SECURE_BROWSER_XSS_FILTER = True
 SECURE_CONTENT_TYPE_NOSNIFF = True
@@ -385,5 +393,9 @@ CYNOSURE_SETTINGS = {
     'NOTIFICATION_BATCH_SIZE': 100,
     'SEARCH_RESULTS_LIMIT': 100,
     'FILE_UPLOAD_MAX_SIZE': 10 * 1024 * 1024,  # 10MB
-    'ALLOWED_UPLOAD_EXTENSIONS': ['.pdf', '.doc', '.docx', '.jpg', '.jpeg', '.png'],
+    'ALLOWED_UPLOAD_EXTENSIONS': [
+        '.pdf', '.doc', '.docx', '.jpg', '.jpeg', '.png',
+        '.mp3', '.m4a', '.webm', '.ogg',  # voice notes (Brief Connect chat)
+    ],
+    'CHAT_ATTACHMENT_MAX_SIZE': 20 * 1024 * 1024,  # 20MB — Brief Connect chat images/documents/voice notes
 }

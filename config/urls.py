@@ -25,6 +25,9 @@ api_v1_patterns = [
     path('efiling/', include('apps.efiling.urls')),
     path('admin-panel/', include('apps.adminpanel.urls')),
     path('brief-connect/', include('apps.brief_connect.urls')),
+    path('policies/', include('apps.policies.urls')),
+    path('payments/', include('apps.payments.urls')),
+    path('disputes/', include('apps.disputes.urls')),
 ]
 
 urlpatterns = [

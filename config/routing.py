@@ -6,8 +6,10 @@ from django.urls import path
 
 from apps.cause_lists.consumers import CauseListConsumer
 from apps.notifications.consumers import NotificationConsumer
+from apps.messaging.consumers import BriefChatConsumer
 
 websocket_urlpatterns = [
     path('ws/cause-lists/', CauseListConsumer.as_asgi()),
     path('ws/notifications/', NotificationConsumer.as_asgi()),
+    path('ws/brief-connect/chat/<uuid:engagement_id>/', BriefChatConsumer.as_asgi()),
 ]
